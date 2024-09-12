@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void lab1();
+void lab1_first();
 
 void lab2();
 
@@ -13,5 +13,5 @@ void lab5();
 void lab6();
 
 int main(void) {
-
+    lab1_first();
 }

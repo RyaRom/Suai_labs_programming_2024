@@ -1,3 +1,0 @@
-C:/Users/locadm/CLionProjects/Suai_labs_programming_2024/cmake-build-debug/CMakeFiles/Suai_labs_algorithms_2024.dir
-C:/Users/locadm/CLionProjects/Suai_labs_programming_2024/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/locadm/CLionProjects/Suai_labs_programming_2024/cmake-build-debug/CMakeFiles/rebuild_cache.dir
