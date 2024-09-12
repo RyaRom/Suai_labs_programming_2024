@@ -1,0 +1,21 @@
+# ninja log v6
+13	311	7478701111222236	CMakeFiles/Suai_labs_algorithms_2024.dir/src/main.c.obj	8a0699bc325b8240
+8	321	7478701111162375	CMakeFiles/Suai_labs_algorithms_2024.dir/src/lab2.c.obj	f7c5f004e9f90ca
+1991	2315	7478701130985352	Suai_labs_algorithms_2024.exe	52850bc8b0304081
+3	328	7478701111102554	CMakeFiles/Suai_labs_algorithms_2024.dir/src/lab1.c.obj	4c29f31b6ea736d
+484	636	7478701115919668	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/AbstractList.c.obj	9eb788525571f88a
+322	484	7478701114294018	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/List.c.obj	323e57d6cbdc6f6f
+328	504	7478701114353852	CMakeFiles/Suai_labs_algorithms_2024.dir/src/utils/Scanner.c.obj	56b4ea77d902ace
+313	510	7478701114214230	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/CircularLinkedList.c.obj	52e03f870d7c5626
+510	700	7478701116178976	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/Stack.c.obj	ad68e99da45d54ea
+636	855	7478701117435612	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/Queue.c.obj	6f9d5c89214ff6bc
+701	862	7478701118083872	CMakeFiles/Suai_labs_algorithms_2024.dir/src/utils/Random.c.obj	bda6c9da3225203a
+855	984	7478701119629766	CMakeFiles/Suai_labs_algorithms_2024.dir/src/lab3structs/cpuSim.c.obj	5d2d3d81ac73c6e0
+504	1987	7478701116119132	CMakeFiles/Suai_labs_algorithms_2024.dir/src/lab3.c.obj	8c10883002b3b07d
+16	328	7478708672790836	CMakeFiles/Suai_labs_algorithms_2024.dir/src/main.c.obj	8a0699bc325b8240
+8	337	7478708672701106	CMakeFiles/Suai_labs_algorithms_2024.dir/src/lab1.c.obj	4c29f31b6ea736d
+59	350	7478708673219964	CMakeFiles/Suai_labs_algorithms_2024.dir/src/utils/Scanner.c.obj	56b4ea77d902ace
+350	484	7478708676122507	CMakeFiles/Suai_labs_algorithms_2024.dir/src/utils/Printer.c.obj	b211fc9d6d0179b
+25	272	7478708765087346	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/Stack.c.obj	ad68e99da45d54ea
+7	107	7478708832716089	CMakeFiles/Suai_labs_algorithms_2024.dir/src/collections/Queue.c.obj	6f9d5c89214ff6bc
+107	341	7478708833724503	Suai_labs_algorithms_2024.exe	1c6994d118382164
