@@ -1,28 +1,11 @@
 cmake_minimum_required(VERSION 3.29)
-project(Suai_labs_programming_2024 C)
+project(Suai_labs_programming_2024)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 
-include_directories(.)
-include_directories(src)
-
-add_executable(Suai_labs_algorithms_2024
-        src/lab1.c
-        src/main.c
-        src/collections/CircularLinkedList.c
-        src/collections/CircularLinkedList.h
-        src/collections/List.c
-        src/collections/List.h
-        src/utils/Scanner.c
-        src/utils/Scanner.h
-        src/collections/AbstractList.c
-        src/collections/AbstractList.h
-        src/collections/Stack.c
-        src/collections/Stack.h
-        src/collections/queue.c
-        src/collections/queue.h
-        src/utils/Random.c
-        src/utils/Random.h
-        src/utils/Printer.c
-        src/utils/Printer.h
-        src/utils/Printer.c)
+add_executable(cpp
+        Lab1.cpp
+        Lab1.h
+        main.cpp
+        Utils/Scanner.cpp
+        Utils/Scanner.h)
