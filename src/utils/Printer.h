@@ -5,7 +5,7 @@
 #ifndef PRINTER_H
 #define PRINTER_H
 
-void print_array(const int *array, int size);
-void print_matrix(const int **matrix, int rows, int cols);
+void print_int_array(const int *array, int size);
+void print_int_matrix(const int **matrix, int rows, int cols);
 
 #endif //PRINTER_H

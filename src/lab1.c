@@ -1,23 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include "utils/Printer.h"
 #include "utils/Scanner.h"
 
-#define SWAP(matrix, i,j) \
+#define SWAP_MATRIX(matrix, i,j) \
     int temp = matrix[i][j]; \
     matrix[i][j] = matrix[j][i]; \
     matrix[j][i] = temp;
 
+#define SWAP_ARRAY(array, i,j) \
+    int temp = array[i]; \
+    array[i] = array[j]; \
+    array[j] = temp;
 
-int find_first_max_negative(const int *array, int size);
+double matrix_find_average(int **matrix, int size);
 
-int find_last_negative_before_n(const int *array, int n);
-
-int array_sum_of_even_i(const int *array, int lower_bound, int upper_bound);
-
-void matrix_symmetry(int **matrix, int size);
+void swap_array_elem(int *array, int size);
 
 void lab1_first() {
     int n;
@@ -28,17 +27,12 @@ void lab1_first() {
     fill_int_array(array, n);
 
     printf("Original array: ");
-    print_array(array, n);
+    print_int_array(array, n);
 
-    const int lower_bound = find_first_max_negative(array, n);
-    const int upper_bound = find_last_negative_before_n(array, n);
-    if (lower_bound == -1 || upper_bound == -1 || lower_bound > upper_bound) {
-        printf("No suitable elements found.\n");
-        return;
-    }
+    swap_array_elem(array, n);
 
-    const int sum = array_sum_of_even_i(array, lower_bound, upper_bound);
-    printf("Sum of even elements between the first and last negative elements: %d\n", sum);
+    printf("Modified array: ");
+    print_int_array(array, n);
     free(array);
 }
 
@@ -51,62 +45,41 @@ void lab1_second() {
     fill_int_matrix(matrix, n, n);
 
     printf("Original matrix: \n");
-    print_matrix(matrix, n, n);
-    matrix_symmetry(matrix, n);
+    print_int_matrix(matrix, n, n);
+    const double avg = matrix_find_average(matrix, n);
 
-    printf("Modified matrix: \n");
-    print_matrix(matrix, n, n);
+    printf("Average in [5+6+7] region %f: \n", avg);
     free(matrix);
 }
 
-int find_first_max_negative(const int *array, const int size) {
-    if (array == NULL || size <= 0) {
-        return -1;
-    }
-    int max_index = 0;
-    int max = array[0];
-    for (int i = size - 1; i > 0; i--) {
-        if (array[i] <= 0 && array[i] > max) {
-            max_index = i;
-            max = array[i];
-        }
-    }
-    return max_index;
-}
-
-int find_last_negative_before_n(const int *array, int n) {
-    if (array == NULL || n <= 0) {
-        return -1;
-    }
-    int last_index = -1;
-    for (int i = 0; i < n; i++) {
-        if (array[i] < 0) {
-            last_index = i;
-        }
-    }
-    return last_index;
-}
-
-int array_sum_of_even_i(const int *array, int lower_bound, int upper_bound) {
-    if (array == NULL) {
-        return -1;
-    }
-    int sum = 0;
-    for (int i = lower_bound; i < upper_bound; i++) {
-        if (i % 2 == 0) sum += array[i];
-    }
-    return sum;
-}
-
-void matrix_symmetry(int **matrix, const int size) {
+double matrix_find_average(int **matrix, const int size) {
     if (matrix == NULL || size <= 0) {
-        return;
+        return 0;
     }
+    int count = 0;
+    int sum = 0;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            if (j >= i && i < size / 2) {
-                SWAP(matrix, i, j);
+            if (j <= i && i >= size / 2 && matrix[i][j] < 0) {
+                sum += matrix[i][j];
+                count++;
             }
+        }
+    }
+    if (count == 0) return 0;
+    return sum / count;
+}
+
+void swap_array_elem(int *array, const int size) {
+    if (array == NULL || size <= 0) {
+        return;
+    }
+    const int n = size / 2;
+    for (int i = 0; i < size; i++) {
+        if (i < n) {
+            SWAP_ARRAY(array, i, size - i - 1);
+        } else if (i < n + n / 2) {
+            SWAP_ARRAY(array, i, size - i - 1 + n);
         }
     }
 }

@@ -14,5 +14,5 @@ void lab5();
 void lab6();
 
 int main(void) {
-    lab1_second();
+    lab1_first();
 }
