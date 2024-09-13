@@ -5,9 +5,9 @@
 #define LAB1_TPP
 #include <iostream>
 #include "Lab1.h"
-#include "Utils/PrintStream.h"
+#include "utils/PrintStream.h"
 #include <iomanip>
-#include "Utils/Scanner.h"
+#include "utils/Scanner.h"
 #define SWAP_ARRAY(array, i,j) \
 int temp = array[i]; \
 array[i] = array[j]; \
