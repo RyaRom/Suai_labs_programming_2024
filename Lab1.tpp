@@ -1,10 +1,12 @@
 //
 // Created by locadm on 9/13/2024.
 //
+#ifndef LAB1_TPP
+#define LAB1_TPP
 #include <iostream>
 #include "Lab1.h"
 #include "Utils/PrintStream.h"
-
+#include <iomanip>
 #include "Utils/Scanner.h"
 #define SWAP_ARRAY(array, i,j) \
 int temp = array[i]; \
@@ -34,10 +36,26 @@ void Lab1<T>::lab1_first() {
 
     std::cout << "Modified array: ";
     PrintStream::print_array(arr);
+    arr.clear();
 }
 
 template<typename T>
 void Lab1<T>::lab1_second() {
+    int n;
+    std::cout << "Enter the n. Size of the matrix is (n * 2) * (n * 2): \n";
+    std::cin >> n;
+    n = n * 2;
+
+    std::vector<std::vector<T> > matrix(n, std::vector<T>(n));
+    Scanner::fill_matrix(matrix);
+
+    std::cout << "Original matrix: \n";
+    PrintStream::print_matrix(matrix);
+
+    const double avg = matrix_find_average(matrix);
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Average in [5+6+7] region: " << avg << std::endl;
 }
 
 template<typename T>
@@ -69,3 +87,4 @@ double Lab1<T>::matrix_find_average(std::vector<std::vector<T> > &matrix) {
     if (count == 0) return 0;
     return sum / count;
 }
+#endif // LAB1_TPP
