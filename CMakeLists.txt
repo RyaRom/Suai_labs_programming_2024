@@ -4,8 +4,9 @@ project(Suai_labs_programming_2024)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(cpp
-        Lab1.cpp
+        Lab1.tpp
         Lab1.h
         main.cpp
-        Utils/Scanner.cpp
-        Utils/Scanner.h)
+        Utils/Scanner.h
+        Lab1.tpp
+        Utils/PrintStream.h)
