@@ -9,4 +9,6 @@ add_executable(cpp
         main.cpp
         Utils/Scanner.h
         Lab1.tpp
-        Utils/PrintStream.h)
+        Utils/PrintStream.h
+        Lab4.cpp
+        Lab4.h)

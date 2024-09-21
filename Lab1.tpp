@@ -56,6 +56,7 @@ void Lab1<T>::lab1_second() {
 
     std::cout << std::fixed << std::setprecision(2);
     std::cout << "Average in [5+6+7] region: " << avg << std::endl;
+    matrix.clear();
 }
 
 template<typename T>

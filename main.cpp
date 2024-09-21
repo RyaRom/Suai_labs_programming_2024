@@ -1,7 +1,5 @@
 #include "Lab1.h"
-//
-// Created by locadm on 9/13/2024.
-//
+#include "Lab4.h"
 int main() {
-    Lab1<int>::main();
+    Lab4::main();
 }
