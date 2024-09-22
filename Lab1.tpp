@@ -8,10 +8,7 @@
 #include "utils/PrintStream.h"
 #include <iomanip>
 #include "utils/Scanner.h"
-#define SWAP_ARRAY(array, i,j) \
-int temp = array[i]; \
-array[i] = array[j]; \
-array[j] = temp;
+
 
 template<typename T>
 void Lab1<T>::main() {
@@ -65,9 +62,9 @@ void Lab1<T>::swap_array_elem(std::vector<T> &array) {
     const int n = size / 2;
     for (int i = 0; i < size; i++) {
         if (i < n) {
-            SWAP_ARRAY(array, i, size - i - 1);
+            std::swap(&array[i], &array[size - i - 1]);
         } else if (i < n + n / 2) {
-            SWAP_ARRAY(array, i, size - i - 1 + n);
+            std::swap(&array[i], &array[size - i - 1 + n]);
         }
     }
 }
