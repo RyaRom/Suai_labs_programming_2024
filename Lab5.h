@@ -1,7 +1,3 @@
-//
-// Created by locadm on 9/25/2024.
-//
-
 #ifndef LAB5_H
 #define LAB5_H
 #include <stdint.h>

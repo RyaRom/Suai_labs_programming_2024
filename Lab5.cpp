@@ -1,7 +1,3 @@
-//
-// Created by locadm on 9/25/2024.
-//
-
 #include <cstdint>
 #include <string>
 #include <fstream>
@@ -9,7 +5,6 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include <bits/algorithmfwd.h>
 #include "Lab5.h"
 #define FNAME_R  "C:\\Users\\locadm\\CLionProjects\\Suai_labs_programming_2024\\files\\db.dat"
 #define FNAME_W  "C:\\Users\\locadm\\CLionProjects\\Suai_labs_programming_2024\\files\\db_output.dat"
@@ -39,6 +34,7 @@ void Lab5::main() {
                 "11. Sort by start time\n"
                 "12. Sort by members count\n"
                 "13. Show search results\n"
+                "14. Drop all data\n"
                 "Enter your choice: ";
         cin >> input;
 
@@ -82,6 +78,9 @@ void Lab5::main() {
             case 13:
                 db_print(FNAME_W);
                 break;
+            case 14:
+                db_create();
+                break;
             default:
                 break;
         }
@@ -116,7 +115,6 @@ void Lab5::db_add() {
         conference.start_time = timestamp;
 
         cout << "Enter section name\n";
-        cin.ignore();
         cin.getline(conference.section, 100);
 
         cout << "Enter leader name\n";
