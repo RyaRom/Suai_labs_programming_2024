@@ -11,4 +11,7 @@ add_executable(cpp
         Lab1.tpp
         Utils/PrintStream.h
         Lab4.cpp
-        Lab4.h)
+        Lab4.h
+        Lab5.cpp
+        Lab5.h
+)
