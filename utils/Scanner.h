@@ -8,6 +8,8 @@
 #include <bits/basic_ios.h>
 #include <vector>
 
+#include "../collections/LinkedList.h"
+
 
 class Scanner {
 public:
@@ -16,6 +18,9 @@ public:
 
     template<typename T>
     static void fill_matrix(std::vector<std::vector<T> > &matrix);
+
+    template<typename T>
+    static void fill_list(LinkedList<T> *list, int count);
 };
 
 template<typename T>
@@ -33,6 +38,16 @@ void Scanner::fill_matrix(std::vector<std::vector<T> > &matrix) {
         for (int j = 0; j < matrix[i].size(); j++) {
             std::cin >> matrix[i][j];
         }
+    }
+}
+
+template<typename T>
+void Scanner::fill_list(LinkedList<T> *list, const int count) {
+    std::cout << "Enter the list elements:\n";
+    T data;
+    for (int i = 0; i < count; ++i) {
+        std::cin >> data;
+        list->add(data);
     }
 }
 
