@@ -20,7 +20,7 @@ public:
     static void fill_matrix(std::vector<std::vector<T> > &matrix);
 
     template<typename T>
-    static void fill_list(LinkedList<T> *list, int count);
+    static void fill_list(LinkedList<T> *list);
 };
 
 template<typename T>
@@ -42,12 +42,24 @@ void Scanner::fill_matrix(std::vector<std::vector<T> > &matrix) {
 }
 
 template<typename T>
-void Scanner::fill_list(LinkedList<T> *list, const int count) {
-    std::cout << "Enter the list elements:\n";
-    T data;
-    for (int i = 0; i < count; ++i) {
-        std::cin >> data;
-        list->add(data);
+void Scanner::fill_list(LinkedList<T> *list) {
+    std::cout << "Enter the list elements: (enter . to stop)\n";
+    std::string input;
+    while (true) {
+        std::cin >> input;
+        if (input == ".") {
+            break;
+        }
+
+        std::stringstream ss(input);
+        T data;
+        ss >> data;
+
+        if (!ss.fail()) {
+            list->add(data);
+        } else {
+            std::cerr << "Invalid input, please try again.\n";
+        }
     }
 }
 

@@ -17,7 +17,9 @@ void matrixSort(tmatr a, int n);
 
 void zeroing(tmatr a, int n);
 
-int lab2_main() {
+int lab2();
+
+int lab2() {
     setlocale(LC_ALL, "Russian");
     int exit = 0;
     while (exit != 1) {

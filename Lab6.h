@@ -15,10 +15,7 @@ public:
 template<typename T>
 void Lab6::main() {
     auto *list = new LinkedList<T>();
-    int count;
-    std::cout << "Enter count of elements in list: " << std::endl;
-    std::cin >> count;
-    Scanner::fill_list(list, count);
+    Scanner::fill_list(list);
     std::cout << "List: " << std::endl;
     list->print();
 

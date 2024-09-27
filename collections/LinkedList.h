@@ -17,10 +17,8 @@ struct Node {
 };
 
 template<typename T>
-std::string toString(Node<T> *node, const int index) {
-    return "Node " +
-           std::to_string(index) +
-           ": " +
+std::string toString(Node<T> *node) {
+    return "Node: " +
            std::to_string(node->data) +
            "\n";
 }
@@ -73,10 +71,8 @@ void LinkedList<T>::add(T data) {
 template<typename T>
 void LinkedList<T>::print() {
     Node<T> *curr = head;
-    int i = 0;
     while (curr != nullptr) {
-        std::cout << toString(curr, i);
-        i++;
+        std::cout << toString(curr);
         curr = curr->next;
     }
 }
