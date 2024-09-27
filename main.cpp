@@ -5,5 +5,5 @@
 typedef int t_elem;
 
 int main() {
-    Lab6::main<t_elem>();
+    Lab5::main();
 }

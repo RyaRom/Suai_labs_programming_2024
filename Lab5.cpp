@@ -286,18 +286,18 @@ void Lab5::db_print(const string &f_name) {
     if (!db_verify()) {
         return;
     }
+    db_print_header();
     ifstream inFile(f_name, ios::binary | ios::in);
     ScienceConference conference;
 
     while (inFile.read(reinterpret_cast<char *>(&conference), sizeof(ScienceConference))) {
         string timeStr = parse_time(conference.start_time);
-        cout << timeStr << " "
-                << conference.section << " "
-                << conference.leader_name << " "
-                << conference.place << " "
-                << conference.members << endl;
+        printf("\n|%15s|%15s|%15s|%30s|%10i|\n",
+               conference.section, conference.leader_name, conference.place,
+               timeStr.c_str(), conference.members);
     }
-
+    print_delim();
+    printf("\n");
     inFile.close();
 }
 
@@ -318,9 +318,26 @@ time_t Lab5::read_time() {
     return mktime(&tm);
 }
 
+void Lab5::db_print_header() {
+    printf("\n");
+
+    print_delim();
+
+    printf("\n");
+    printf("|%15s|%15s|%15s|%30s|%10s|\n", "Section ", "Leader name    ",
+           "Place", "Start time", "Members");
+
+    print_delim();
+}
+
 
 string Lab5::parse_time(const time_t time) {
     char buff[20];
     strftime(buff, sizeof(buff), "%Y-%m-%d %H:%M:%S", localtime(&time));
     return std::string(buff);
+}
+
+void Lab5::print_delim() {
+    for (int i = 1; i <= 92; i++)
+        printf("-");
 }

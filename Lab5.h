@@ -46,8 +46,11 @@ private:
 
     static time_t read_time();
 
+    static void db_print_header();
 
     static std::string parse_time(time_t time);
+
+    static void print_delim();
 };
 
 constexpr const char *sortFieldToString(const SortField field) {
