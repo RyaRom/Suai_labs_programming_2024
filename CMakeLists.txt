@@ -17,4 +17,5 @@ add_executable(cpp
         collections/LinkedList.h
         Lab6.h
         lab2.cpp
+        lab3.cpp
 )
